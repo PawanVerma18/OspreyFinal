@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.EditUserDetailsPage"
+             Title="Edit User Details"
+             BackgroundColor="Black">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <!-- Editable Fields -->
+                <Entry Text="{Binding Name}"
+                       Placeholder="Name"
+                       TextColor="White"
+                       PlaceholderColor="Gray" />
+
+                <Entry Text="{Binding Email}"
+                       Placeholder="Email"
+                       TextColor="White"
+                       PlaceholderColor="Gray"
+                       IsEnabled="False" />
+                <!-- Email is not editable -->
+
+                <Entry Text="{Binding PhoneNumber}"
+                       Placeholder="Phone Number"
+                       TextColor="White"
+                       PlaceholderColor="Gray" />
+
+                <DatePicker Date="{Binding DateOfBirth, Mode=TwoWay}"
+                            Format="MM/dd/yyyy"
+                            TextColor="White"
+                            BackgroundColor="Transparent" />
+
+                <Picker Title="Gender"
+                        ItemsSource="{Binding Genders}"
+                        SelectedItem="{Binding Gender, Mode=TwoWay}"
+                        TextColor="White"
+                        BackgroundColor="Transparent" />
+
+                <Entry Text="{Binding Address}"
+                       Placeholder="Address"
+                       TextColor="White"
+                       PlaceholderColor="Gray" />
+
+                <!-- Save Button -->
+                <Button Text="Save Changes"
+                        BackgroundColor="#FF6A00"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        Command="{Binding SaveChangesCommand}"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

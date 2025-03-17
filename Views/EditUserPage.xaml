@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.EditUserPage"
+             BackgroundColor="#1A1A1A"
+             Title="User Details">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="20">
+                    <!-- Display All User Details -->
+                    <Label Text="{Binding Name}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="{Binding Email}"
+                           FontSize="18"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="{Binding PhoneNumber}"
+                           FontSize="18"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="{Binding Gender}"
+                           FontSize="18"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="{Binding Address}"
+                           FontSize="18"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="{Binding DateOfBirth, StringFormat='Date of Birth: {0:MM/dd/yyyy}'}"
+                           FontSize="18"
+                           TextColor="#F5CB86"/>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

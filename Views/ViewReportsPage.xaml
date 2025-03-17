@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.ViewReportsPage"
+             Title="View Talent Applications">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+            <!-- CollectionView to display talent applications -->
+            <CollectionView x:Name="TalentApplicationsList"
+                            ItemsSource="{Binding TalentApplications}"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#F5F5F5" CornerRadius="10" Padding="15" HasShadow="True">
+                            <StackLayout Spacing="10">
+                                <Label Text="{Binding FullName}" FontAttributes="Bold" FontSize="16" TextColor="#1A1A1A"/>
+                                <Label Text="{Binding Email}" FontSize="14" TextColor="#666666"/>
+                                <Label Text="{Binding TalentName}" FontSize="14" TextColor="#666666"/>
+                                <Label Text="{Binding Description}" FontSize="14" TextColor="#666666"/>
+                                <Label Text="{Binding AppliedOn, StringFormat='Applied on: {0:MM/dd/yyyy}'}" FontSize="12" TextColor="#999999"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Activity Indicator to show loading state -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#F5CB86"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

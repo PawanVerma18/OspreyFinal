@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.Registration"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="30">
+                    <Label Text="User Registration"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <Frame BackgroundColor="#F5CB86" CornerRadius="10" Padding="15" HasShadow="True">
+                        <StackLayout Spacing="20">
+                            <Entry Placeholder="Full Name"
+                                   Text="{Binding FullName}"
+                                   TextColor="#1A1A1A"
+                                   PlaceholderColor="#1A1A1A"
+                                   BackgroundColor="#F5CB86"/>
+
+                            <Entry Placeholder="Email"
+                                   Text="{Binding Email}"
+                                   TextColor="#1A1A1A"
+                                   PlaceholderColor="#1A1A1A"
+                                   Keyboard="Email"
+                                   BackgroundColor="#F5CB86"/>
+
+                            <Entry Placeholder="Password"
+                                   IsPassword="True"
+                                   Text="{Binding Password}"
+                                   TextColor="#1A1A1A"
+                                   PlaceholderColor="#1A1A1A"
+                                   BackgroundColor="#F5CB86"/>
+
+                            <Entry Placeholder="Phone Number"
+                                   Text="{Binding PhoneNumber}"
+                                   TextColor="#1A1A1A"
+                                   PlaceholderColor="#1A1A1A"
+                                   Keyboard="Telephone"
+                                   BackgroundColor="#F5CB86"/>
+
+                            <DatePicker Date="{Binding DateOfBirth}"
+                                        Format="yyyy-MM-dd"
+                                        TextColor="#1A1A1A"
+                                        BackgroundColor="#F5CB86"/>
+
+                            <Picker Title="Select Gender"
+                                    ItemsSource="{Binding Genders}"
+                                    SelectedItem="{Binding Gender}"
+                                    TextColor="#1A1A1A"
+                                    BackgroundColor="#F5CB86">
+                                <Picker.Items>
+                                    <x:String>Male</x:String>
+                                    <x:String>Female</x:String>
+                                    <x:String>Other</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+                            <Editor Placeholder="Address"
+                                    Text="{Binding Address}"
+                                    TextColor="#1A1A1A"
+                                    PlaceholderColor="#1A1A1A"
+                                    BackgroundColor="#F5CB86"
+                                    AutoSize="TextChanges"/>
+
+                            <Button Text="Register"
+                                    BackgroundColor="#1A1A1A"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    Command="{Binding RegisterCommand}" />
+
+                            <!-- Back Button -->
+                            <Button Text="Back to Main Screen"
+                                    BackgroundColor="#1A1A1A"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    Command="{Binding BackCommand}" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

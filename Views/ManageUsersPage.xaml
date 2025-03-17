@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.ManageUsersPage"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="30">
+                    <!-- User Counter -->
+                    <Label x:Name="UserCountLabel"
+                           Text="Total Users: 0"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <Label Text="Manage Users"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <ListView x:Name="UsersListView"
+                              HasUnevenRows="True"
+                              SeparatorColor="#F5CB86"
+                              ItemSelected="OnUserSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10" Spacing="10">
+                                        <!-- Display Name and Email -->
+                                        <Label Text="{Binding Name}"
+                                               FontSize="18"
+                                               TextColor="#F5CB86"/>
+                                        <Label Text="{Binding Email}"
+                                               FontSize="14"
+                                               TextColor="#F5CB86"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

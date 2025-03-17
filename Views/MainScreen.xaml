@@ -1,0 +1,152 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.MainScreen"
+             xmlns:local="clr-namespace:Osprey3.Views"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Resources>
+        <Style x:Key="CustomLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Secre"/>
+            <Setter Property="TextColor" Value="#F5CB86"/>
+        </Style>
+
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#000000"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style x:Key="SubHeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="#FFD700"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="0,15"/>
+        </Style>
+
+        <Style x:Key="DescriptionTextStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="0,10"/>
+        </Style>
+
+        <Style x:Key="HeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="80"/>
+            <Setter Property="Margin" Value="20,0"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="#FFD700"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <!-- Style for Forgot Password Link -->
+        <Style x:Key="ForgotPasswordLinkStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#F5CB86"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalOptions" Value="End"/>
+            <Setter Property="Margin" Value="0,5"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Padding="20" Spacing="20">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,10">
+                        <Label Text="Osprey"
+                               Style="{StaticResource HeaderStyle}"
+                               Padding="10"/>
+                    </StackLayout>
+
+                    <Label Text="Redefining Icons"
+                           Style="{StaticResource SubHeaderStyle}"
+                           Margin="0,5"/>
+
+                    <Label Text="A vetted membership community for females in sport and entertainment"
+                           Style="{StaticResource DescriptionTextStyle}"
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           Margin="0,10"/>
+
+                    <Frame BackgroundColor="#2A2A2A" CornerRadius="20" Padding="15" HasShadow="True" Opacity="0.9">
+                        <StackLayout>
+                            <Label Text="Olympians, World Champions, Emmy &amp; Grammy Winners, High Profile Executives, College Athletes"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource CustomLabelStyle}" />
+                            <StackLayout Padding="20"
+                                         BackgroundColor="#F5CB86"
+                                         Opacity="1"
+                                         Spacing="10">
+                                <Label Text="Quick Login" FontSize="20" FontAttributes="Bold" TextColor="#1A1A1A"/>
+
+                                <Frame BackgroundColor="#F5CB86" CornerRadius="20" HasShadow="True" Padding="5">
+                                    <Entry Placeholder="Email"
+                                           Text="{Binding Email}"
+                                           Keyboard="Email"
+                                           TextColor="#1A1A1A"
+                                           PlaceholderColor="#000000" 
+                                           BackgroundColor="#F5CB86"
+                                           HeightRequest="50" />
+                                </Frame>
+                                <Frame BackgroundColor="#F5CB86" CornerRadius="20" HasShadow="True" Padding="5">
+                                    <Entry Placeholder="Password"
+                                           Text="{Binding Password}"
+                                           IsPassword="True"
+                                           Keyboard="Default"
+                                           TextColor="#1A1A1A"
+                                           PlaceholderColor="#000000" 
+                                           BackgroundColor="#F5CB86"
+                                           HeightRequest="50" />
+                                </Frame>
+
+                                <!-- Forgot Password Link -->
+                              
+
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Label Text="Forgot Password?"
+                                            BackgroundColor="Black"
+         Style="{StaticResource ForgotPasswordLinkStyle}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Button Text="Login" Style="{StaticResource CustomButtonStyle}"  Clicked="OnLoginClicked"/>
+                                    <Button Text="Signup" Style="{StaticResource CustomButtonStyle}" Clicked="OnSignupClicked"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#2A2A2A" CornerRadius="20" Padding="15" HasShadow="True" Opacity="0.9">
+                        <StackLayout>
+                            <Label Text="We’re redefining the identity of icons in Sport and Entertainment."
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource CustomLabelStyle}" />
+                            <StackLayout Spacing="15" Padding="10">
+                                <!-- Bind buttons to commands -->
+                                <Button Text="Talent Apply Here" 
+                                        Style="{StaticResource CustomButtonStyle}" 
+                                        Command="{Binding TalentApplyCommand}" />
+                               
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                   
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

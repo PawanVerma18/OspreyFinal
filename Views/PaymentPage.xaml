@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.PaymentPage"
+             Title="Payment">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Contributor Name -->
+            <Label Text="Your Name:"
+                   FontSize="18"
+                   TextColor="White" />
+            <Entry x:Name="ContributorNameEntry"
+                   Placeholder="Enter your name"
+                   BackgroundColor="#2E2E2E"
+                   TextColor="White"
+                   PlaceholderColor="#F5CB86" />
+
+            <!-- Amount Entry -->
+            <Label Text="Enter Amount to Contribute:"
+                   FontSize="18"
+                   TextColor="White" />
+            <Entry x:Name="AmountEntry"
+                   Placeholder="Enter amount"
+                   Keyboard="Numeric"
+                   BackgroundColor="#2E2E2E"
+                   TextColor="White"
+                   PlaceholderColor="#F5CB86" />
+
+            <!-- Debit Card Details -->
+            <Label Text="Debit Card Details"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="0,10,0,5" />
+
+            <!-- Cardholder Name -->
+            <Label Text="Cardholder Name:"
+                   FontSize="18"
+                   TextColor="White" />
+            <Entry x:Name="CardholderNameEntry"
+                   Placeholder="Name on card"
+                   BackgroundColor="#2E2E2E"
+                   TextColor="White"
+                   PlaceholderColor="#F5CB86" />
+
+            <!-- Card Number -->
+            <Label Text="Card Number:"
+                   FontSize="18"
+                   TextColor="White" />
+            <Entry x:Name="CardNumberEntry"
+                   Placeholder="1234 5678 9012 3456"
+                   Keyboard="Numeric"
+                   BackgroundColor="#2E2E2E"
+                   TextColor="White"
+                   PlaceholderColor="#F5CB86" />
+
+            <!-- Expiry Date and CVV -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Expiry Date -->
+                <StackLayout Grid.Column="0">
+                    <Label Text="Expiry Date:"
+                           FontSize="18"
+                           TextColor="White" />
+                    <Entry x:Name="ExpiryDateEntry"
+                           Placeholder="MM/YY"
+                           Keyboard="Numeric"
+                           BackgroundColor="#2E2E2E"
+                           TextColor="White"
+                           PlaceholderColor="#F5CB86" />
+                </StackLayout>
+
+                <!-- CVV -->
+                <StackLayout Grid.Column="1">
+                    <Label Text="CVV:"
+                           FontSize="18"
+                           TextColor="White" />
+                    <Entry x:Name="CVVEntry"
+                           Placeholder="123"
+                           Keyboard="Numeric"
+                           BackgroundColor="#2E2E2E"
+                           TextColor="White"
+                           PlaceholderColor="#F5CB86"
+                           IsPassword="True" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Terms and Conditions -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <CheckBox x:Name="TermsCheckBox"
+                          Color="#4CAF50" />
+                <Label Text="I agree to the terms and conditions."
+                       FontSize="14"
+                       TextColor="White" />
+            </StackLayout>
+
+            <!-- Payment Button -->
+            <Button Text="Proceed to Payment"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    Clicked="OnPaymentButtonClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.AdminPage"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!-- Background Image -->
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <!-- Main Content -->
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="30">
+                    <!-- Title -->
+                    <Label Text="Admin Dashboard"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <!-- Admin Options -->
+                    <Frame BackgroundColor="#333333" CornerRadius="10" Padding="15" HasShadow="True">
+                        <StackLayout Spacing="20">
+                            <!-- Manage Users Button -->
+                            <Button Text="Manage Users"
+                                    BackgroundColor="#FF6A00"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    FontAttributes="Bold"
+                                    HeightRequest="50"
+                                    Command="{Binding ManageUsersCommand}" />
+
+                            <!-- View Reports Button -->
+                            <Button Text="View Reports"
+                                    BackgroundColor="#FF6A00"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    FontAttributes="Bold"
+                                    HeightRequest="50"
+                                    Command="{Binding ViewReportsCommand}" />
+
+                            <!-- Back Button -->
+                            <Button Text="Back to Main Screen"
+                                    BackgroundColor="#FF6A00"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    FontAttributes="Bold"
+                                    HeightRequest="50"
+                                    Command="{Binding BackCommand}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Events Section -->
+                    <Frame BackgroundColor="#2C3E50" CornerRadius="15" Padding="20" HasShadow="True">
+                        <StackLayout Spacing="15">
+                            <!-- Events Header -->
+                            <Label Text="Events"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+                            <!-- Events ListView -->
+                            <ListView x:Name="EventsListView"
+                  ItemsSource="{Binding Events}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  BackgroundColor="Transparent">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame BackgroundColor="#34495E" CornerRadius="10" Padding="15" HasShadow="True">
+                                                <StackLayout Spacing="10">
+                                                    <!-- Event Details -->
+                                                    <Label Text="{Binding EventName}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="18" />
+                                                    <Label Text="{Binding EventDate, StringFormat='Date: {0:MM/dd/yyyy}'}"
+                                       TextColor="#F5CB86"
+                                       FontSize="14" />
+                                                    <Label Text="{Binding Description}"
+                                       TextColor="#F5CB86"
+                                       FontSize="14" />
+
+                                                    <!-- Delete Button -->
+                                                    <Button Text="Delete"
+                                        BackgroundColor="#E74C3C"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="End"
+                                        Command="{Binding Source={x:Reference EventsListView}, Path=BindingContext.DeleteEventCommand}"
+                                        CommandParameter="{Binding .}" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <!-- Add Event Form -->
+                            <Frame BackgroundColor="#34495E" CornerRadius="10" Padding="15" HasShadow="True">
+                                <StackLayout Spacing="10">
+                                    <Entry Placeholder="Event Name"
+                       BackgroundColor="#445566"
+                       TextColor="White"
+                       PlaceholderColor="#999999"
+                       Text="{Binding NewEvent.EventName}" />
+                                    <DatePicker Date="{Binding NewEvent.EventDate}"
+                            BackgroundColor="#445566"
+                            TextColor="White" />
+                                    <Editor Placeholder="Event Description"
+                        BackgroundColor="#445566"
+                        TextColor="White"
+                        PlaceholderColor="#999999"
+                        Text="{Binding NewEvent.Description}" />
+                                    <Button Text="Add Event"
+                        BackgroundColor="#1ABC9C"
+                        TextColor="White"
+                        CornerRadius="5"
+                        FontAttributes="Bold"
+                        Command="{Binding AddEventCommand}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Promotions Section -->
+                    <Frame BackgroundColor="#2C3E50" CornerRadius="15" Padding="20" HasShadow="True">
+                        <StackLayout Spacing="15">
+                            <!-- Promotions Header -->
+                            <Label Text="Promotions"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+                            <!-- Promotions ListView -->
+                            <ListView x:Name="PromotionsListView"
+                  ItemsSource="{Binding Promotions}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  BackgroundColor="Transparent">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame BackgroundColor="#34495E" CornerRadius="10" Padding="15" HasShadow="True">
+                                                <StackLayout Spacing="10">
+                                                    <!-- Promotion Details -->
+                                                    <Label Text="{Binding PromotionName}"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontSize="18" />
+                                                    <Label Text="{Binding StartDate, StringFormat='Start: {0:MM/dd/yyyy}'}"
+                                       TextColor="#F5CB86"
+                                       FontSize="14" />
+                                                    <Label Text="{Binding EndDate, StringFormat='End: {0:MM/dd/yyyy}'}"
+                                       TextColor="#F5CB86"
+                                       FontSize="14" />
+                                                    <Label Text="{Binding Description}"
+                                       TextColor="#F5CB86"
+                                       FontSize="14" />
+
+                                                    <!-- Delete Button -->
+                                                    <Button Text="Delete"
+                                        BackgroundColor="#E74C3C"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="End"
+                                        Command="{Binding Source={x:Reference PromotionsListView}, Path=BindingContext.DeletePromotionCommand}"
+                                        CommandParameter="{Binding .}" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <!-- Add Promotion Form -->
+                            <Frame BackgroundColor="#34495E" CornerRadius="10" Padding="15" HasShadow="True">
+                                <StackLayout Spacing="10">
+                                    <Entry Placeholder="Promotion Name"
+                       BackgroundColor="#445566"
+                       TextColor="White"
+                       PlaceholderColor="#999999"
+                       Text="{Binding NewPromotion.PromotionName}" />
+                                    <DatePicker Date="{Binding NewPromotion.StartDate}"
+                            BackgroundColor="#445566"
+                            TextColor="White" />
+                                    <DatePicker Date="{Binding NewPromotion.EndDate}"
+                            BackgroundColor="#445566"
+                            TextColor="White" />
+                                    <Editor Placeholder="Promotion Description"
+                        BackgroundColor="#445566"
+                        TextColor="White"
+                        PlaceholderColor="#999999"
+                        Text="{Binding NewPromotion.Description}" />
+                                    <Button Text="Add Promotion"
+                        BackgroundColor="#1ABC9C"
+                        TextColor="White"
+                        CornerRadius="5"
+                        FontAttributes="Bold"
+                        Command="{Binding AddPromotionCommand}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <!-- Funding Section -->
+                   
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

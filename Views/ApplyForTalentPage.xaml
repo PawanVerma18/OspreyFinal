@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.ApplyForTalentPage"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="30">
+                    <Label Text="Apply for Talent"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <Frame BackgroundColor="#2A2A2A" CornerRadius="10" Padding="15" HasShadow="True">
+                        <StackLayout Spacing="20">
+                            <Entry Placeholder="Full Name"
+                                   Text="{Binding TalentApplication.FullName}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <Entry Placeholder="Email"
+                                   Text="{Binding TalentApplication.Email}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   Keyboard="Email"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <Entry Placeholder="Phone Number"
+                                   Text="{Binding TalentApplication.PhoneNumber}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   Keyboard="Telephone"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <Entry Placeholder="Talent Name"
+                                   Text="{Binding TalentApplication.TalentName}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <Editor Placeholder="Describe your talent"
+                                    Text="{Binding TalentApplication.Description}"
+                                    TextColor="White"
+                                    PlaceholderColor="#999999"
+                                    BackgroundColor="#2A2A2A"
+                                    HeightRequest="100"/>
+
+                            <Entry Placeholder="Social Media Link"
+                                   Text="{Binding TalentApplication.SocialMediaLink}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <Button Text="Apply"
+                                    BackgroundColor="#F5CB86"
+                                    TextColor="#1A1A1A"
+                                    CornerRadius="25"
+                                    Command="{Binding ApplyCommand}" />
+
+                            <!-- Back Button -->
+                            <Button Text="Back to Main Screen"
+                                    BackgroundColor="#1A1A1A"
+                                    TextColor="White"
+                                    CornerRadius="25"
+                                    Command="{Binding BackCommand}" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.Homepage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!-- Background Image with Overlay -->
+            <Image Source="landscape.jpeg"
+                   Aspect="AspectFill"
+                   Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All" />
+
+            <!-- Scrollable Content -->
+            <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Padding="20" Spacing="20">
+
+                    <Image Source="ospery.png"
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center" />
+                    <Button Text="View User Details"
+                            BackgroundColor="#FF6A00"
+                            TextColor="White"
+                            CornerRadius="10"
+                            FontAttributes="Bold"
+                            Clicked="OnViewUserDetailsClicked"
+                            HorizontalOptions="Center"
+                            Margin="0,20,0,0" />
+
+                    <Label Text="BUILDING THE MOST POWERFUL NETWORK OF WOMEN IN SPORT AND ENTERTAINMENT"
+                           FontSize="26"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           Padding="10" />
+
+                    <!-- Enhanced 3x3 Grid -->
+                    <Grid Padding="10" RowSpacing="15" ColumnSpacing="15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Image Blocks with Shadows -->
+                        <Frame Grid.Row="0" Grid.Column="0" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img1.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="1" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img2.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="2" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img3.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img4.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="1" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img5.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="2" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img6.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="2" Grid.Column="0" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img7.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="2" Grid.Column="1" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img8.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Frame Grid.Row="2" Grid.Column="2" Padding="0" HasShadow="True" CornerRadius="10" BackgroundColor="#333">
+                            <Image Source="img9.jpeg" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                    </Grid>
+
+                    <!-- Key Stats Section -->
+                    <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="A Nest of 100+ high profile members and growing."
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#8B8000"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,10,0,10" />
+
+                        <BoxView HeightRequest="2" BackgroundColor="#8B8000" WidthRequest="200" HorizontalOptions="Center" />
+
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="20+ Olympic Medals" FontSize="14" TextColor="#8B8000" HorizontalTextAlignment="Center" />
+                            <Label Grid.Row="0" Grid.Column="1" Text="7+ Emmys and Grammys" FontSize="14" TextColor="#8B8000" HorizontalTextAlignment="Center" />
+                            <Label Grid.Row="0" Grid.Column="2" Text="17 Million + Followers" FontSize="14" TextColor="#8B8000" HorizontalTextAlignment="Center" />
+                            <Label Grid.Row="0" Grid.Column="3" Text="25+ World Champions" FontSize="14" TextColor="#8B8000" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </StackLayout>
+                    <BoxView HeightRequest="4" BackgroundColor="White" WidthRequest="800" HorizontalOptions="Center" />
+
+                    <!-- THE PROBLEM Section -->
+                    <StackLayout Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="THE PROBLEM"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               TextColor="#8B8000"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Less than 1% of women in sports and entertainment can maintain a career based purely on their talent."
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalTextAlignment="Start"
+                               Margin="10,0,10,15" />
+                        <Label Text="Women in these sectors are vocalizing their need and desire for connection and community."
+                                 FontSize="16"
+                                  TextColor="White"
+                                    HorizontalTextAlignment="Start"
+                                    Margin="10,5,10,15" />
+                    </StackLayout>
+
+                    <!-- Four Cards Section -->
+                    <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0" Grid.Column="0" Padding="10" HasShadow="True" CornerRadius="10" BackgroundColor="#444">
+                            <StackLayout>
+                                <Label Text="THE FOCUS IS ONLY ON TOP 1%" FontSize="16" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="Osprey’s is the other 99" FontSize="14" TextColor="#F5CB86" />
+                                <Image Source="img1.jpeg" Aspect="AspectFill" HeightRequest="100" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="1" Padding="10" HasShadow="True" CornerRadius="10" BackgroundColor="#444">
+                            <StackLayout>
+                                <Label Text="LACK LEVERAGE AND
+CONNECTIONS" FontSize="16" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="We network
+internationally and
+outside the box" FontSize="14" TextColor="#F5CB86" />
+                                <Image Source="img2.jpeg" Aspect="AspectFill" HeightRequest="100" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" Padding="10" HasShadow="True" CornerRadius="10" BackgroundColor="#444">
+                            <StackLayout>
+                                <Label Text="A LOT OF ONE-
+DIMENSIONAL
+
+THINKING" FontSize="16" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="The Osprey Nest is
+versatile and well
+connected" FontSize="14" TextColor="#F5CB86" />
+                                <Image Source="img3.jpeg" Aspect="AspectFill" HeightRequest="100" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="1" Padding="10" HasShadow="True" CornerRadius="10" BackgroundColor="#444">
+                            <StackLayout>
+                                <Label Text="AGENTS/MANAGE
+RS/COMPANIES
+OVER PROMISE AND
+UNDER DELIVER" FontSize="16" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="We partner with brands
+that know our members
+worth!" FontSize="14" TextColor="#F5CB86" />
+                                <Image Source="img4.jpeg" Aspect="AspectFill" HeightRequest="100" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    <BoxView HeightRequest="4" BackgroundColor="White" WidthRequest="800" HorizontalOptions="Center" />
+                    <!-- OUR MEMBERS Header -->
+                    <Frame BackgroundColor="#333" CornerRadius="20" Padding="20" HasShadow="True">
+                        <StackLayout Spacing="20">
+                            <!-- Header -->
+                            <Label Text="OUR MEMBERS" 
+               FontSize="28" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" 
+               Margin="0,10" />
+
+                            <!-- Talent and Executives Layout -->
+                            <Grid RowSpacing="20" ColumnSpacing="20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Talent Section on Left -->
+                                <Frame Grid.Column="0" 
+                   BackgroundColor="#444" 
+                   CornerRadius="15" 
+                   Padding="15" 
+                   HasShadow="True">
+                                    <StackLayout Spacing="10">
+                                        <Label Text="TALENT" 
+                           FontSize="20" 
+                           TextColor="White" 
+                           FontAttributes="Bold" 
+                           HorizontalTextAlignment="Start" />
+                                        <Label Text="A few of our incredible members..." 
+                           FontSize="16" 
+                           TextColor="#DDD" 
+                           HorizontalTextAlignment="Start" />
+
+                                        <StackLayout Spacing="8" Padding="10">
+                                            <Label Text="• Caroline Collins" TextColor="White" FontSize="16" />
+                                            <Label Text="  News Anchor (2M Subs)" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Troy Mullins" TextColor="White" FontSize="16" />
+                                            <Label Text="  LIV GOLF Presenter" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Pippa Mann" TextColor="White" FontSize="16" />
+                                            <Label Text="  7 X Indy 500 Race Car Driver" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• DJ L3XI" TextColor="White" FontSize="16" />
+                                            <Label Text="  Recording Artist" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Julia Marino" TextColor="White" FontSize="16" />
+                                            <Label Text="  Olympic Snowboarder" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Cat Osterman" TextColor="White" FontSize="16" />
+                                            <Label Text="  USA Softball/Olympian" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Janaisa Morandin" TextColor="White" FontSize="16" />
+                                            <Label Text="  MMA" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Laura Wilkinson" TextColor="White" FontSize="16" />
+                                            <Label Text="  Olympic Diver" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• DR Jen Welter" TextColor="White" FontSize="16" />
+                                            <Label Text="  First Female NFL Coach" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Morgan Stickney" TextColor="White" FontSize="16" />
+                                            <Label Text="  Paralympian" TextColor="#DDD" FontSize="14" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+
+                                <!-- Executives Section on Right -->
+                                <Frame Grid.Column="1" 
+                   BackgroundColor="#444" 
+                   CornerRadius="15" 
+                   Padding="15" 
+                   HasShadow="True">
+                                    <StackLayout Spacing="10">
+                                        <Label Text="EXECUTIVES" 
+                           FontSize="20" 
+                           TextColor="White" 
+                           FontAttributes="Bold" 
+                           HorizontalTextAlignment="Start" />
+                                        <Label Text="A few of our incredible members..." 
+                           FontSize="16" 
+                           TextColor="#DDD" 
+                           HorizontalTextAlignment="Start" />
+
+                                        <StackLayout Spacing="8" Padding="10">
+                                            <Label Text="• Jenna Kurath" TextColor="White" FontSize="16" />
+                                            <Label Text="  Comcast/NBC - VP" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Meghan Chayka" TextColor="White" FontSize="16" />
+                                            <Label Text="  Analyst/Stathletes" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Emily Staker" TextColor="White" FontSize="16" />
+                                            <Label Text="  NFL Agent/Lawyer" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Nicole Middendorf" TextColor="White" FontSize="16" />
+                                            <Label Text="  Financial Advisor" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Kate Foley" TextColor="White" FontSize="16" />
+                                            <Label Text="  NBA Agent (Epic)" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Rachel Segal" TextColor="White" FontSize="16" />
+                                            <Label Text="  NHL/PWHL" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Amy Siegfried" TextColor="White" FontSize="16" />
+                                            <Label Text="  Sports Entrepreneur" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Suzanne Richardson" TextColor="White" FontSize="16" />
+                                            <Label Text="  Entertainment Events" TextColor="#DDD" FontSize="14" />
+
+                                            <Label Text="• Vanessa Lambert" TextColor="White" FontSize="16" />
+                                            <Label Text="  Bally Sports" TextColor="#DDD" FontSize="14" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <ScrollView VerticalOptions="StartAndExpand">
+                        <StackLayout Spacing="10" Padding="10">
+                            <!-- Funding Section -->
+                            <Label Text="Funding"
+       FontSize="26"
+       FontAttributes="Bold"
+       TextColor="White"
+       Margin="0,10,0,5" />
+
+                            <Frame BackgroundColor="#2E2E2E" CornerRadius="15" Padding="15" Margin="0,5">
+                                <StackLayout Spacing="10">
+                                    <!-- Funding Goal -->
+                                    <Label Text="{Binding FundingGoal, StringFormat='🎯 Goal: {0:C}'}"
+               FontSize="18"
+               TextColor="#F5CB86" />
+
+                                    <!-- Total Funded Amount -->
+                                    <Label Text="{Binding TotalFunding, StringFormat='💰 Funded: {0:C}'}"
+               FontSize="18"
+               TextColor="#F5CB86" />
+
+                                    <!-- Progress Bar -->
+                                    <ProgressBar Progress="{Binding FundingProgress}"
+                     ProgressColor="#4CAF50"
+                     BackgroundColor="#1E1E1E"
+                     HeightRequest="10" />
+
+                                    <!-- Contributor List -->
+                                    <Label Text="Contributors:"
+               FontSize="18"
+               TextColor="White"
+               Margin="0,10,0,5" />
+
+                                    <ListView x:Name="ContributorsListView" ItemsSource="{Binding Contributors}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout Spacing="5" Padding="10">
+                                                        <!-- Contributor Name -->
+                                                        <Label Text="{Binding ContributorName}"
+                                   FontSize="16"
+                                   TextColor="White" />
+
+                                                        <!-- Contribution Amount and Date -->
+                                                        <StackLayout Orientation="Horizontal" Spacing="10">
+                                                            <Label Text="{Binding ContributionAmount, StringFormat='💵 {0:C}'}"
+                                       FontSize="14"
+                                       TextColor="#F5CB86" />
+                                                            <Label Text="{Binding ContributionDate, StringFormat='📅 {0:MM/dd/yyyy}'}"
+                                       FontSize="14"
+                                       TextColor="#F5CB86" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+                                    <!-- Raise Fund Button -->
+                                    <Button Text="Raise Fund"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                Command="{Binding AddContributionCommand}" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Events Section -->
+                            <Label Text="Events"
+               FontSize="26"
+               FontAttributes="Bold"
+               TextColor="White"
+               Margin="0,10,0,5" />
+                            <!-- Reduced bottom margin -->
+
+                            <CollectionView x:Name="EventsCollectionView" ItemsSource="{Binding Events}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame BackgroundColor="#2E2E2E" CornerRadius="15" Padding="15" Margin="0,5">
+                                            <StackLayout Spacing="8">
+                                                <!-- Event Title (Header) -->
+                                                <Label Text="{Binding EventName}"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                                                <!-- Event Date (Small Section) -->
+                                                <Label Text="{Binding EventDate, StringFormat='📅 {0:MM/dd/yyyy}'}"
+                                   FontSize="14"
+                                   TextColor="#F5CB86" />
+
+                                                <!-- Event Description (Full Width) -->
+                                                <Label Text="{Binding Description}"
+                                   FontSize="16"
+                                   TextColor="#F5CB86"
+                                   LineBreakMode="WordWrap" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <!-- Promotions Section -->
+                            <Label Text="Promotions"
+               FontSize="26"
+               FontAttributes="Bold"
+               TextColor="White"
+               Margin="0,10,0,5" />
+                            <!-- Reduced top and bottom margin -->
+
+                            <CollectionView x:Name="PromotionsCollectionView" ItemsSource="{Binding Promotions}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame BackgroundColor="#2E2E2E" CornerRadius="15" Padding="15" Margin="0,5">
+                                            <StackLayout Spacing="8">
+                                                <!-- Promotion Title (Header) -->
+                                                <Label Text="{Binding PromotionName}"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                                                <!-- Promotion Dates (Small Section) -->
+                                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                                    <Label Text="{Binding StartDate, StringFormat='🛫 Start: {0:MM/dd/yyyy}'}"
+                                       FontSize="14"
+                                       TextColor="#F5CB86" />
+                                                    <Label Text="{Binding EndDate, StringFormat='🛬 End: {0:MM/dd/yyyy}'}"
+                                       FontSize="14"
+                                       TextColor="#F5CB86" />
+                                                </StackLayout>
+
+                                                <!-- Promotion Description (Full Width) -->
+                                                <Label Text="{Binding Description}"
+                                   FontSize="16"
+                                   TextColor="#F5CB86"
+                                   LineBreakMode="WordWrap" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </StackLayout>
+                    </ScrollView>
+                    <!-- Post Display Section -->
+                    <StackLayout x:Name="PostContainer" Spacing="20">
+                        <!-- Posts will be dynamically added here -->
+                    </StackLayout>
+
+                    <Frame BackgroundColor="#444" CornerRadius="15" Padding="20" HasShadow="True">
+                        <StackLayout>
+                            <Label Text="CONTACT"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalTextAlignment="Center" />
+
+                            <Label FontSize="16"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               Margin="10,5,10,10">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="LYDIA DAVIES" />
+                                        <Span Text="&#10;" />
+                                        <!-- Line break using XML escape -->
+                                        <Span Text="281-753-5630" />
+                                        <Span Text="&#10;" />
+                                        <!-- Line break using XML escape -->
+                                        <Span Text="LYDIA@JOINOSPREY.COM" />
+                                        <Span Text="&#10;" />
+                                        <!-- Line break using XML escape -->
+                                        <Span Text="WWW.JOINOSPREY.COM" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Text="ELEVATE. REDEFINE. SOAR."
+               FontSize="18"
+               FontAttributes="Bold"
+               TextColor="#F5CB86"
+               HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </Frame>
+                    <Button Text="Customer Help"
+                            Style="{StaticResource CustomButtonStyle}"  
+                            Clicked="OnCustomerHelpClicked" />
+
+                </StackLayout>
+               
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

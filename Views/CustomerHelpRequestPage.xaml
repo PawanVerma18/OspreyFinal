@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Osprey3.Views.CustomerHelpRequestPage"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="landscape.jpeg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                <StackLayout Padding="20" Spacing="30">
+                    <Label Text="Customer Help Request"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F5CB86"/>
+
+                    <Frame BackgroundColor="#2A2A2A" CornerRadius="10" Padding="15" HasShadow="True">
+                        <StackLayout Spacing="20">
+                            <!-- Full Name -->
+                            <Entry Placeholder="Full Name"
+                                   Text="{Binding NewCustomerHelpRequest.FullName}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <!-- Email -->
+                            <Entry Placeholder="Email"
+                                   Text="{Binding NewCustomerHelpRequest.Email}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   Keyboard="Email"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <!-- Phone Number -->
+                            <Entry Placeholder="Phone Number"
+                                   Text="{Binding NewCustomerHelpRequest.PhoneNumber}"
+                                   TextColor="White"
+                                   PlaceholderColor="#999999"
+                                   Keyboard="Telephone"
+                                   BackgroundColor="#2A2A2A"/>
+
+                            <!-- Issue Description -->
+                            <Editor Placeholder="Describe your issue"
+                                    Text="{Binding NewCustomerHelpRequest.IssueDescription}"
+                                    TextColor="White"
+                                    PlaceholderColor="#999999"
+                                    BackgroundColor="#2A2A2A"
+                                    HeightRequest="100"/>
+
+                            <!-- Submit Button -->
+                            <Button Text="Submit Request"
+                                    BackgroundColor="#F5CB86"
+                                    TextColor="#1A1A1A"
+                                    CornerRadius="25"
+                                    Command="{Binding AddCustomerHelpRequestCommand}"/>
+
+                            <!-- Back Button -->
+                            <Button Text="Back to Main Screen"
+                                    BackgroundColor="#1A1A1A"
+                                    TextColor="White"
+                                    CornerRadius="25"
+                                    Command="{Binding BackCommand}"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
